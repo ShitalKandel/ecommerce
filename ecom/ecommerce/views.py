@@ -1,4 +1,4 @@
-from rest_framework import generics
+from rest_framework import generics,viewsets
 from ecommerce import serializers
 from ecommerce import models
 
@@ -44,3 +44,12 @@ class OrderDetail(generics.ListAPIView):
         order = models.Order.objects.get(id=order_id)
         order_items = models.OrderItems.objects.filter(order=order)
         return order_items
+    
+
+class CustomerAddressViewSet(viewsets.ModelViewSet):
+    serializer_class = serializers.CustomerAddressSerialzer
+    queryset = models.CustomerAddress.objects.all()
+
+class ProductRatingsReviewViewSet(viewsets.ModelViewSet):
+    serializer_class = serializers.ProductReviewSerialzer
+    queryset = models.ProductReview.objects.all()

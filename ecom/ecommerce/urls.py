@@ -1,5 +1,10 @@
 from django.urls import path
 from ecommerce import views
+from rest_framework import routers
+
+router = routers.DefaultRouter()
+router.register('address',views.CustomerAddressViewSet)
+router.register('productreview',views.ProductRatingsReviewViewSet)
 
 urlpatterns = [
     path('retailers/',views.RetailerList.as_view()),
@@ -11,3 +16,5 @@ urlpatterns = [
     path('orders/',views.OrderList.as_view()),
     path('order/<int:pk>/',views.OrderDetail.as_view()),
 ]       
+
+urlpatterns += router.urls

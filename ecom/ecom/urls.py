@@ -14,10 +14,12 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 
-    http://127.0.0.1:8000/api/token/ username=shital password=1234
+   http post http://127.0.0.1:8000/api/token/ username=shital password=1234
 
     "refresh": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTcxNzY1NzY1OSwiaWF0IjoxNzE3NTcxMjU5LCJqdGkiOiJlYzQ2M2M2NmRmNzM0ZDgzODA4MWJhNDBmMjBjMmRkYSIsInVzZXJfaWQiOjF9.TWhtHncCioTge60tAlSwkJdXz1MOkwUh7kwz4w8Smlg",
-    "access": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE3NTcxNTU5LCJpYXQiOjE3MTc1NzEyNTksImp0aSI6Ijg2ZjZkN2FjYTMyNjRiZTk4ZDBhOGI0YzBmNTg3ZTk1IiwidXNlcl9pZCI6MX0.LnxkBPdzbegaayyEBC4wDLcTKhFX7XQhjvIBEykF6Uo"
+
+    http://127.0.0.1:8000/api/retailers/
+    "Authorization : Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE3NTcxNTU5LCJpYXQiOjE3MTc1NzEyNTksImp0aSI6Ijg2ZjZkN2FjYTMyNjRiZTk4ZDBhOGI0YzBmNTg3ZTk1IiwidXNlcl9pZCI6MX0.LnxkBPdzbegaayyEBC4wDLcTKhFX7XQhjvIBEykF6Uo"
 
     http://127.0.0.1:8000/api/token/refresh/
 """
