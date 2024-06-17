@@ -22,10 +22,10 @@ function Header() {
               </a>
               <ul className="dropdown-menu">
                 <li><Link className="dropdown-item" to="/customer/register">Register</Link></li>
-                <li><Link className="dropdown-item" href="#">Login</Link></li>
+                <li><Link className="dropdown-item" to="/customer/login">Login</Link></li>
                 <li><hr className="dropdown-divider"/></li>
-                <li><Link className="dropdown-item" href="#">Dashboard</Link></li>
-                <li><Link className="dropdown-item" href="#">Logout</Link></li>
+                <li><Link className="dropdown-item" to="/customer/dashboard">Dashboard</Link></li>
+                <li><Link className="dropdown-item" to="/customer/logout">Logout</Link></li>
               </ul>
             </li>
             <li className="nav-item">
