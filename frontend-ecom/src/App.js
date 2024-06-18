@@ -23,6 +23,18 @@ import Wishlist from './components/customer/Wishlist';
 import Profile from './components/customer/Profile';
 import ChangePassword from './components/customer/ChangePassword';
 import AddressList from './components/customer/AddressList';
+import AddAddress from './components/customer/AddAddress';
+
+//Retailer Panel
+import RetailerDashboard from './components/Retailer/RetailerDashboard';
+import RetailerRegister from './components/Retailer/RetailerRegister';
+import RetailerLogin from './components/Retailer/RetailerLogin';
+import RetailerProducts from './components/Retailer/RetailerProducts';
+import AddProduct from './components/Retailer/AddProduct';
+import RetailerOrders from './components/Retailer/RetailerOrders';
+import Customers from './components/Retailer/Customers';
+
+
 
 
 function App() {
@@ -37,6 +49,7 @@ function App() {
         <Route path='/checkout' element={<Checkout/>}/>
         <Route path='/order/success' element={<OrderSuccess/>}/>
         <Route path='/order/failure' element={<OrderFailure/>}/>
+        {/* Customer Routes */}
         <Route path='/customer/register' element={<Register/>}/>
         <Route path='/customer/login' element={<Login/>}/>
         <Route path='/customer/dashboard' element={<Dashboard/>}/>
@@ -45,6 +58,17 @@ function App() {
         <Route path='/customer/profile' element={<Profile/>}/>
         <Route path="/customer/change-password"element={<ChangePassword/>}/>
         <Route path="/customer/addresses"element={<AddressList/>}/>
+        <Route path="/customer/add-address"element={<AddAddress/>}/>
+        {/* Retailer Routes */}
+        <Route path='/retailer/register' element={<RetailerRegister/>}/>
+        <Route path='/retailer/login' element={<RetailerLogin/>}/>
+        <Route path='/retailer/register' element={<RetailerRegister/>}/>
+        <Route path='/retailer/dashboard' element={<RetailerDashboard/>}/>
+        <Route path='/retailer/products' element={<RetailerProducts/>}/>
+        <Route path='/retailer/add-product' element={<AddProduct/>}/>
+        <Route path='/retailer/orders' element={<RetailerOrders/>}/>
+        <Route path='/retailer/customers' element={<Customers/>}/>
+
       </Routes>
       <Footer/>
     </>

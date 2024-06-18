@@ -28,11 +28,27 @@ function Header() {
                 <li><Link className="dropdown-item" to="/customer/logout">Logout</Link></li>
               </ul>
             </li>
+            <li className="nav-item dropdown">
+              <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Retailer
+              </a>
+              <ul className="dropdown-menu">
+                <li><Link className="dropdown-item" to="/retailer/register">Register</Link></li>
+                <li><Link className="dropdown-item" to="/retailer/login">Login</Link></li>
+                <li><hr className="dropdown-divider"/></li>
+                <li><Link className="dropdown-item" to="/retailer/dashboard">Dashboard</Link></li>
+                <li><Link className="dropdown-item" to="/retailer/logout">Logout</Link></li>
+              </ul>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/checkout">New Orders (1)</Link>
+            </li>
             <li className="nav-item">
               <Link className="nav-link" to="/checkout">My Car(7)</Link>
             </li>
           </ul>
         </div>
+        
       </div>
     </nav>
   )
