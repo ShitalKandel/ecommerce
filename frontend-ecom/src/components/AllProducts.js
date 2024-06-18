@@ -1,19 +1,38 @@
-import logo from '../logo.svg';
+// import logo from '../logo.svg';
+import { Link } from 'react-router-dom';
 import SingleProduct from './SingleProduct';
+import { useState, useEffect } from 'react';
 
 function AllProduct() {
+    const baseUrl = useState('http://localhost:8000/api')
+    const [products, setProducts] = useState([]);
+    const [totalResult, setTotalResults] = useState(0);
 
-    const products = [
-        {
-            'title': 'technolgy',
-            'price': 200
-        },
-        {
-            'title': 'Clothing',
-            'price': 150
-        }
-    ]
 
+    useEffect(() => {
+        fetchData(baseUrl+'/products');
+    }, []);
+
+
+    function fetchData(baseurl) {
+        fetch(baseurl)
+            .then((response) => response.json())
+            .then((data) => {
+                setProducts(data.results);
+                setTotalResults(data.count);
+            });
+    }
+
+
+    function changeUrl(baseurl) {
+        fetchData(baseurl);
+    }
+
+    var links = [];
+    for (let i = 1; i <= totalResult; i++) {
+        links.push(<li class="page-item"><Link onClick={() => changeUrl( baseUrl + '/products/?page=${i}')} to={'/products/?page=${i}'} class="page-link">{i}</Link></li>
+        )
+    }
 
     return (
         <section className="container mt-4">
@@ -21,26 +40,15 @@ function AllProduct() {
             <h3 className="md-3"><span className="text-dark">All Product</span></h3>
             <div className="row mb-4">
                 {
-                    products.map((product) => <SingleProduct product={product.title}/>)
+                    products.map((product) => <SingleProduct product={product} />)
                 }
             </div>
             {/* End Latest Product */}
 
             <nav aria-label="Page navigation example">
+
                 <ul class="pagination">
-                    <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Previous">
-                            <span aria-hidden="true">&laquo;</span>
-                        </a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Next">
-                            <span aria-hidden="true">&raquo;</span>
-                        </a>
-                    </li>
+                    {links}
                 </ul>
             </nav>
         </section>
