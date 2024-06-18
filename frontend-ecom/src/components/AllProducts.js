@@ -4,7 +4,7 @@ import SingleProduct from './SingleProduct';
 import { useState, useEffect } from 'react';
 
 function AllProduct() {
-    const baseUrl = useState('http://localhost:8000/api')
+    const baseUrl = 'http://localhost:8000/api'
     const [products, setProducts] = useState([]);
     const [totalResult, setTotalResults] = useState(0);
 
@@ -15,22 +15,23 @@ function AllProduct() {
 
 
     function fetchData(baseurl) {
-        fetch(baseurl)
+        fetch(baseurl,{mode:'cors'})
             .then((response) => response.json())
             .then((data) => {
+                console.log(data);
                 setProducts(data.results);
                 setTotalResults(data.count);
             });
     }
 
 
-    function changeUrl(baseurl) {
-        fetchData(baseurl);
+    function changeUrl(url) {
+        fetchData(url);
     }
 
     var links = [];
     for (let i = 1; i <= totalResult; i++) {
-        links.push(<li class="page-item"><Link onClick={() => changeUrl( baseUrl + '/products/?page=${i}')} to={'/products/?page=${i}'} class="page-link">{i}</Link></li>
+        links.push(<li class="page-item"><Link onClick={() => changeUrl( baseUrl + `/products/?page=${i}`)} to={'/products/?page=${i}'} class="page-link">{i}</Link></li>
         )
     }
 

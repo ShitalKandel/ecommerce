@@ -9,10 +9,10 @@ function Home() {
                 {/* Latest Product Section*/}
                 <h3 className="md-3">Latest Product <Link to="/products" className='float-end btn btn-dark '>View all products <i class="fa-solid fa-arrow-right-to-bracket"></i></Link></h3>
                 <div className="row mb-4">
-                <SingleProduct title="Redmi 6"/>
-                <SingleProduct title="Redmi 6"/>
-                <SingleProduct title="Redmi 6"/>
-                <SingleProduct title="Redmi 6"/>
+                <SingleProduct product={{title: 'redmi', price:'21'}}/>
+                <SingleProduct product={{title: 'redmi', price:'21'}}/>
+                <SingleProduct product={{title: 'redmi', price:'21'}}/>
+                <SingleProduct product={{title: 'redmi', price:'21'}}/>
 
                 </div>
                 {/* End Latest Product */}
