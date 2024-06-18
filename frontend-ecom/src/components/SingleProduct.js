@@ -11,9 +11,9 @@ function SingleProduct(props) {
                 </Link>
                 <div className="card-body">
                     <h4 className="card-title">
-                        <Link to="product/technology-timer/1">{props.title}</Link>
+                        <Link to="product/technology-timer/1">{props.product.title}</Link>
                     </h4>
-                    <h5 className="card-title text-muted">Price : Rs. 200</h5>
+                    <h5 className="card-title text-muted">Price : Rs. {props.product.price }</h5>
                 </div>
                 <div className="card-footer">
                     <button title="Add to cart" className="btn btn-success btn-sm"><i class="fa fa-shopping-cart fa-1x" aria-hidden="true"></i></button>

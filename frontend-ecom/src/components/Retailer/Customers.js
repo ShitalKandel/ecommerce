@@ -31,9 +31,11 @@ function Customers(props) {
                                         <td>jhon@gmail.com</td>
                                         <td>
                                             1234567890
-                                            </td>
+                                        </td>
                                         <td>
-                                            <button className='btn btn-danger btn-sm'>Remove From List</button> </td>
+                                            <button className='btn btn-primary btn-sm '>Orders</button>
+                                            <button className='btn btn-danger btn-sm ms-1'>Remove From List</button>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td>2</td>
@@ -43,9 +45,11 @@ function Customers(props) {
                                         <td>alex@gmail.com</td>
                                         <td>
                                             1234567890
-                                            </td>
+                                        </td>
                                         <td>
-                                            <button className='btn btn-danger btn-sm'>Remove From List</button> </td>
+                                            <button className='btn btn-primary btn-sm '>Orders</button>
+                                            <button className='btn btn-danger btn-sm ms-1'>Remove From List</button>
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>

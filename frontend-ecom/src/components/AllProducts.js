@@ -2,19 +2,27 @@ import logo from '../logo.svg';
 import SingleProduct from './SingleProduct';
 
 function AllProduct() {
+
+    const products = [
+        {
+            'title': 'technolgy',
+            'price': 200
+        },
+        {
+            'title': 'Clothing',
+            'price': 150
+        }
+    ]
+
+
     return (
         <section className="container mt-4">
             {/* Latest Product Section*/}
             <h3 className="md-3"><span className="text-dark">All Product</span></h3>
             <div className="row mb-4">
-                <SingleProduct title="Redmi 6"/>
-                <SingleProduct title = "Redmi 6a"/>
-                <SingleProduct title = "Samsung S1"/>
-                <SingleProduct title = "Iphone 10"/>    
-                <SingleProduct title = "MacBook"/>
-                <SingleProduct title = "Poco S19"/>
-                <SingleProduct title = "Huwai Y5"/>
-                <SingleProduct title = "Lenovos"/>
+                {
+                    products.map((product) => <SingleProduct product={product.title}/>)
+                }
             </div>
             {/* End Latest Product */}
 

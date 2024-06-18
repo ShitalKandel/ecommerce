@@ -10,6 +10,8 @@ function RetailerSidebar() {
             <Link to="/retailer/orders" className="list-group-item list-group-item-action">Orders</Link>
             <Link to="/retailer/customers" className="list-group-item list-group-item-action">Customers</Link>
             <Link to="/retailer/reports" className="list-group-item list-group-item-action">Reports</Link>
+            <Link to="/retailer/profile" className="list-group-item list-group-item-action">Profile</Link>
+            <Link to="/retailer/change-password" className="list-group-item list-group-item-action">Change Password</Link>
             <a href="#" className="list-group-item list-group-item-action text-danger">Logout</a>
         </div>
     )

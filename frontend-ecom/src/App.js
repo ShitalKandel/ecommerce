@@ -33,6 +33,9 @@ import RetailerProducts from './components/Retailer/RetailerProducts';
 import AddProduct from './components/Retailer/AddProduct';
 import RetailerOrders from './components/Retailer/RetailerOrders';
 import Customers from './components/Retailer/Customers';
+import Report from './components/Retailer/Report';
+import RetailerProfile from './components/Retailer/RetailerProfile';
+import RetailerChangePassword from './components/Retailer/RetailerChangePassword';
 
 
 
@@ -68,7 +71,9 @@ function App() {
         <Route path='/retailer/add-product' element={<AddProduct/>}/>
         <Route path='/retailer/orders' element={<RetailerOrders/>}/>
         <Route path='/retailer/customers' element={<Customers/>}/>
-
+        <Route path='/retailer/reports' element={<Report/>}/>
+        <Route path='/retailer/profile' element={<RetailerProfile/>}/>    
+        <Route path='/retailer/change-password' element={<RetailerChangePassword/>}/>                                                
       </Routes>
       <Footer/>
     </>
