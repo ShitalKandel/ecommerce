@@ -3,16 +3,37 @@ import { Link } from 'react-router-dom';
 import SingleProduct from './SingleProduct';
 
 function Home() {
+    const products = [
+        {
+            'title': 'Product1',
+            'price': 100
+        },
+        {
+            'title': 'Product2',
+            'price': 200
+        },
+        {
+            'title': 'Product3',
+            'price': 300
+        },
+        {
+            'title': 'Product4',
+            'price': 400
+        },
+    ]
+
+
+
+
     return (
         <main className='mt-4'>
             <div className="container">
                 {/* Latest Product Section*/}
                 <h3 className="md-3">Latest Product <Link to="/products" className='float-end btn btn-dark '>View all products <i class="fa-solid fa-arrow-right-to-bracket"></i></Link></h3>
                 <div className="row mb-4">
-                <SingleProduct product={{title: 'redmi', price:'21'}}/>
-                <SingleProduct product={{title: 'redmi', price:'21'}}/>
-                <SingleProduct product={{title: 'redmi', price:'21'}}/>
-                <SingleProduct product={{title: 'redmi', price:'21'}}/>
+                    {
+                        products.map((product) => <SingleProduct product={product} />)
+                    }
 
                 </div>
                 {/* End Latest Product */}
