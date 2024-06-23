@@ -2,7 +2,6 @@ import logo from '../logo.svg';
 import SingleProduct from './SingleProduct';
 
 function CategoryProduct() {
-    
     return (
         <section className="container mt-4">
             {/* Latest Product Section*/}
