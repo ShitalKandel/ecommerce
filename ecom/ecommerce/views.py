@@ -4,47 +4,48 @@ from ecommerce import models
 
 class RetailerList(generics.ListCreateAPIView):
     queryset = models.Retailer.objects.all()
-    serializer_class = serializers.RetailerSerialzer
+    serializer_class = serializers.RetailerSerializer
 
 class RetailerDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = models.Retailer.objects.all()
-    serializer_class = serializers.RetailerDetailSerialzer
+    serializer_class = serializers.RetailerDetailSerializer
 
 class ProductList(generics.ListCreateAPIView):
     queryset = models.Product.objects.all()
-    serializer_class = serializers.ProductListSerialzer
+    serializer_class = serializers.ProductListSerializer
 
     def get_queryset(self):
         qs =  super().get_queryset()
         category = self.request.GET['category']
-        category = models.ProductCategory.objects.get(category)
+        category = models.Product.objects.get(category)
         qs = qs.filter(category=category)
         return qs
+    
 
 class ProductDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = models.Product.objects.all()
-    serializer_class = serializers.ProductDetailSerialzer
+    serializer_class = serializers.ProductDetailSerializer
 
 
 #Customer Views
 
 class CustomerList(generics.ListCreateAPIView):
     queryset = models.Customer.objects.all()
-    serializer_class = serializers.CustomerSerialzer
+    serializer_class = serializers.CustomerSerializer
 
 class CustomerDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = models.Customer.objects.all()
-    serializer_class = serializers.CustomerDetailSerialzer
+    serializer_class = serializers.CustomerDetailSerializer
 
 
 class OrderList(generics.ListCreateAPIView):
     queryset = models.Order.objects.all()
-    serializer_class = serializers.OrderSerialzer
+    serializer_class = serializers.OrderSerializer
 
 
 class OrderDetail(generics.ListAPIView):
     # queryset = models.OrderItems.objects.all()
-    serializer_class = serializers.OrderDetailSerialzer
+    serializer_class = serializers.OrderDetailSerializer
 
     def get_queryset(self):
         order_id = self.kwargs['pk']
@@ -54,18 +55,18 @@ class OrderDetail(generics.ListAPIView):
     
 
 class CustomerAddressViewSet(viewsets.ModelViewSet):
-    serializer_class = serializers.CustomerAddressSerialzer
+    serializer_class = serializers.CustomerAddressSerializer
     queryset = models.CustomerAddress.objects.all()
 
 class ProductRatingsReviewViewSet(viewsets.ModelViewSet):
-    serializer_class = serializers.ProductReviewSerialzer
+    serializer_class = serializers.ProductReviewSerializer
     queryset = models.ProductReview.objects.all()
 
 #Category 
 class CategoryList(generics.ListCreateAPIView):
     queryset = models.ProductCategory.objects.all()
-    serializer_class = serializers.CategorySerialzer
+    serializer_class = serializers.CategorySerializer
 
 class CategoryDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = models.ProductCategory.objects.all()
-    serializer_class = serializers.CategoryDetailSerialzer
+    serializer_class = serializers.CategoryDetailSerializer
