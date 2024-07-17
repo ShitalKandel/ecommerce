@@ -1,4 +1,4 @@
-from rest_framework import generics,viewsets
+from rest_framework import generics,viewsets, pagination
 from ecommerce import serializers
 from ecommerce import models
 
@@ -13,12 +13,15 @@ class RetailerDetail(generics.RetrieveUpdateDestroyAPIView):
 class ProductList(generics.ListCreateAPIView):
     queryset = models.Product.objects.all()
     serializer_class = serializers.ProductListSerializer
+    pagination_class = pagination.PageNumberPagination
 
     def get_queryset(self):
         qs =  super().get_queryset()
-        category = self.request.GET['category']
-        category = models.Product.objects.get(category)
-        qs = qs.filter(category=category)
+        category_id = self.request.GET.get('category')
+        if category_id:
+            category = models.ProductCategory.objects.get(id=category_id)
+            qs = qs.filter(category=category)
+        
         return qs
     
 
